@@ -1,0 +1,4 @@
+/node_modules
+/vendor
+/.vscode
+/src/js/config
