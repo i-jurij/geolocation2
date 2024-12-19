@@ -1,5 +1,5 @@
 {
-  "name": "geolocation",
+  "name": "geolocation2",
   "version": "1.0.0",
   "description": "shoose, save to localstorage and show location on page",
   "main": "geolocation.js",
@@ -17,17 +17,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/i-jurij/geolocation.git"
+    "url": "git+https://github.com/i-jurij/geolocation2.git"
   },
   "keywords": [
-    "geolocation"
+    "geolocation2"
   ],
   "author": "i-jurij",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/i-jurij/geolocation/issues"
+    "url": "https://github.com/i-jurij/geolocation2/issues"
   },
-  "homepage": "https://github.com/i-jurij/geolocation#readme",
+  "homepage": "https://github.com/i-jurij/geolocation2#readme",
   "dependencies": {
     "oswc2_styles": "github:i-jurij/oswc2_styles"
   }
