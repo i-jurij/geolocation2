@@ -1,6 +1,6 @@
 {
   "name": "geolocation2",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "shoose, save to localstorage and show location on page",
   "main": "geolocation.js",
   "directories": {

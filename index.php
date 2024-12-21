@@ -63,10 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'
 		<script>
 			let url_from_coord = '/';
 			let url_from_db = '/';
-			let yapikey = ''; // use only if city not found in db and must be undefined or empty if not use
-			//let city_from_back = "<?php // echo !empty($location['city']) ? $location['city'] : 'Местоположение';?>";
-    		//let region_from_back = "<?php // echo !empty($location['region']) ? $location['region'] : '';?>";
 			let url_save_to_backend = '/';
+			let yapikey = ''; // use only if city not found in db and must be undefined or empty if not use
 		</script>
 		<script src="build/geolocation.js"></script>
 		</body>
