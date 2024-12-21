@@ -1,3 +1,5 @@
+import { saveToBackend } from './choiceToBackend.js';
+
 import { outLocation } from './OutLocationOnPage.js'
 
 import { getLoc } from './browserNavigator.js'

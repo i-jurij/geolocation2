@@ -66,6 +66,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'
 			let url_save_to_backend = '/';
 			let yapikey = ''; // use only if city not found in db and must be undefined or empty if not use
 		</script>
-		<script src="build/geolocation.js"></script>
+		<script src="build/geolocation2.js"></script>
 		</body>
 		</html>

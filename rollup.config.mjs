@@ -4,14 +4,14 @@ import css from "rollup-plugin-import-css";
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 export default {
-	input: 'src/js/geolocation.js',
+	input: 'src/js/geolocation2.js',
 	output: [
 		{
-			file: 'build/geolocation.js',
+			file: 'build/geolocation2.js',
 			format: 'umd' //'es'
 		},
 		{
-			file: 'build/geolocation.min.js',
+			file: 'build/geolocation2.min.js',
 			format: 'umd', //'esm',
 			name: 'version',
 			plugins: [terser()]

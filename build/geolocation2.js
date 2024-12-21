@@ -53,6 +53,23 @@
 		});
 	}
 
+	function saveToBackend$1(city_text, region_text, city_id) {
+	    const formData = new FormData();
+
+	    formData.set("city_id", city_id);
+	    formData.set("city", city_text);
+	    formData.set("region", region_text);
+
+	    fetch(url_from_db, {
+	        method: 'POST',
+	        credentials: 'same-origin',
+	        headers: {
+	            'X_TOBACKEND': 'toBackend',
+	        },
+	        body: formData,
+	    });
+	}
+
 	function outLocation({ city, adress }) {
 	    const city_elem = document.getElementById("location");
 	    //const city_elem = document.getElementById("p_city");
@@ -232,7 +249,7 @@
 
 	        if (locality) {
 	            outLocation({ city: locality.city, adress: locality.adress });
-	            saveToBackend(locality.city, locality.adress, '');
+	            saveToBackend$1(locality.city, locality.adress, '');
 	        } else {
 	            const city_from_back_el = document.getElementById('location');
 	            if (city_from_back_el) {
@@ -259,7 +276,7 @@
 
 	                        outLocation({ city: city_from_back, adress: region });
 	                        setLocality({ city: city_from_back, adress: region });
-	                        saveToBackend(city_from_back, region, '');
+	                        saveToBackend$1(city_from_back, region, '');
 	                    }
 	                } else {
 	                    console.warn('WARNING! Element with id "location" is empty (city name data).');
@@ -1278,22 +1295,6 @@
 	    } else {
 	        return 'click';
 	    }
-	}
-	function saveToBackend$1(city_text, region_text, city_id) {
-	    const formData = new FormData();
-
-	    formData.set("city_id", city_id);
-	    formData.set("city", city_text);
-	    formData.set("region", region_text);
-
-	    fetch(url_from_db, {
-	        method: 'POST',
-	        credentials: 'same-origin',
-	        headers: {
-	            'X_TOBACKEND': 'toBackend',
-	        },
-	        body: formData,
-	    });
 	}
 
 	function sc_common(city_text, region_text, city_id) {

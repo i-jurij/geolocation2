@@ -8,7 +8,7 @@ html();
 import { geoLoc } from './geo/geoLoc.js';
 setTimeout(geoLoc(), 100);
 
-import { fromDB, saveToBackend } from './geo/fromDB.js';
+import { fromDB } from './geo/fromDB.js';
 setTimeout(fromDB(), 1000);
 
 // reread data from db with regions or city data of executors or customers from city of localstorage
