@@ -1,0 +1,50 @@
+.autoComplete_wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.autoComplete_wrapper>ul {
+  position: absolute;
+  max-height: 15rem;
+  overflow-y: scroll;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+  border-radius: 0.25rem;
+  background-color: #181b17;
+  border: 1px solid rgba(33, 33, 33, 0.1);
+  z-index: 1000;
+  outline: none;
+}
+
+.autoComplete_wrapper>ul>li {
+  padding: 0.5rem 1rem;
+  list-style: none;
+  text-align: left;
+  font-size: 1rem;
+  color: #c0ccb9;
+  transition: all 0.1s ease-in-out;
+  border-radius: 0.25rem;
+  background-color: #181b17;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.2s ease;
+}
+
+.autoComplete_wrapper>ul>li:hover {
+  cursor: pointer;
+  background-color: rgba(193, 193, 193, 0.1);
+}
+
+.autoComplete_wrapper>ul>li mark {
+  background-color: transparent;
+  color: rgb(77, 183, 44);
+  font-weight: bold;
+}
+
+.autoComplete_wrapper>ul>li[aria-selected="true"] {
+  background-color: rgba(147, 147, 147, 0.2);
+}
