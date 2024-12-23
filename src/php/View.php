@@ -53,13 +53,11 @@ class View
         return '';
     }
 
-    public function htmlOut()
+    public function htmlOut(): string
     {
-        $res_string = $this->setCity($this->location)
+        return $this->setCity($this->location)
          .$this->setMessage($this->location)
          .$this->setChoice();
-
-        return $res_string || '';
     }
 
     protected function setCity(array $location): string
