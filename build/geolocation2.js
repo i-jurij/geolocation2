@@ -60,7 +60,7 @@
 	    formData.set("city", city_text);
 	    formData.set("region", region_text);
 
-	    fetch(url_from_db, {
+	    fetch(url_save_to_backend, {
 	        method: 'POST',
 	        credentials: 'same-origin',
 	        headers: {
@@ -173,9 +173,9 @@
 	        }
 	    }
 
-	    function yandexGeo(yapikey, coord) {
-	        if (yapikey) {
-	            locationFromYandexGeocoder(yapikey, coord);
+	    function yandexGeo(yandexapikey, long_lat_object) {
+	        if (yandexapikey) {
+	            locationFromYandexGeocoder(yandexapikey, long_lat_object);
 	        } else {
 	            outLocation({ city: '', adress: '' });
 	            console.warn("WARNING! Yandex API key is undefined");
