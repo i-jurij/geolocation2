@@ -48,11 +48,11 @@ Create:
     "repositories": [
         {
             "url": "https://github.com/i-jurij/geolocation2.git",
-            "type": "git"
+            "type": "vcs"
         }
     ],
     "require": {
-        "i-jurij/geolocation2": "~2.0"
+        "i-jurij/geolocation2": "dev-main"
     }
 }
 ```
