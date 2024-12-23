@@ -55,9 +55,11 @@ class View
 
     public function htmlOut()
     {
-        return $this->setCity($this->location)
+        $res_string = $this->setCity($this->location)
          .$this->setMessage($this->location)
          .$this->setChoice();
+
+        return $res_string || '';
     }
 
     protected function setCity(array $location): string

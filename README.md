@@ -56,6 +56,9 @@ Create:
     }
 }
 ```
+
+or   
+
 **package.json**:   
 ```
 {
@@ -66,7 +69,13 @@ Create:
 }
 ```
 
-Then run `composer install` and `npm install` from command line into your project directory.   
+Then run `composer install` or `npm install` from command line into your project directory.   
+But you must resolve import from "node_modules" directory in first way (composer) and   
+resolve automatic autoloading of php class from "vendor" directory in second way.  
+
+For automatic resolving autoloading of php class from "vendor" directory and   
+javascript import from "node_modules" directory you can `composer install` and `npm install` both execute.   
+Package weight ~50Kb only.  
 
 #### Example
 If your site not use MVC model example is into `index.php` into root directory.   
@@ -83,16 +92,35 @@ For shoosing city from list i use fetch request to class Front.
 Js variable "url_from_db" use for getting url to controller that will return json responce.   
 For this don't forget to specify the routes in your framework (eg Route('url_from_coord', 'Controller:asyncFromCoord')) for getting city from coordinates and for shoosing from city list.   
 Also controllers methods for async request processing could be like this:  
+
 ``` 
 function asyncFromCoord(): void {
-    $fromCoord = new Geolocation\Php\Front();
+    $fromCoord = new \Geolocation\Php\Front();
     $fromCoord->fromCoord();
 }
 ``` 
 ```
 function asyncFromDb(): void {
-    $fromDb = new Geolocation\Php\Front();
+    $fromDb = new \Geolocation\Php\Front();
     $fromDb->getAll();
+}
+```
+
+```
+function saveLoc(): void {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST'
+        && !empty($_POST['district'])
+        && filter_input(INPUT_POST, 'district') !== false
+        && !empty($_POST['region'])
+        && filter_input(INPUT_POST, 'region') !== false
+        && !empty($_POST['city'])
+        && filter_input(INPUT_POST, 'city') !== false) {
+            $location = [
+                'city' => filter_input(INPUT_POST, 'city', FILTER_SANITIZE_SPECIAL_CHARS),
+                'region' => filter_input(INPUT_POST, 'region', FILTER_SANITIZE_SPECIAL_CHARS),
+                'district' => filter_input(INPUT_POST, 'district', FILTER_SANITIZE_SPECIAL_CHARS),
+            ];
+        }
 }
 ```
 
@@ -116,7 +144,7 @@ and put to template or View:
         let url_from_coord = 'url_from_coord'; // or {Url::('Controller:asyncGeo')} eg
         let url_from_db = 'url_from_db'; // {Url::('Controller:fromDb')} eg
         let url_save_to_backend = 'url_for_save_city_after_user_selects'; // {Url::('Controller:saveLoc')} eg
-</script>
+    </script>
 	<script src="build/geolocation.min.js"></script>
 ```
 
