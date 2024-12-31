@@ -1,0 +1,34 @@
+{
+  "name": "geolocation2",
+  "version": "2.0.0",
+  "description": "shoose, save to localstorage and show location on page",
+  "main": "geolocation2.js",
+  "directories": {
+    "example": "example"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.28.1",
+    "rollup-plugin-import-css": "^3.5.7"
+  },
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i-jurij/geolocation2.git"
+  },
+  "keywords": [
+    "geolocation2"
+  ],
+  "author": "i-jurij",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/i-jurij/geolocation2/issues"
+  },
+  "homepage": "https://github.com/i-jurij/geolocation2#readme",
+  "dependencies": {
+    "oswc2_styles": "github:i-jurij/oswc2_styles"
+  }
+}

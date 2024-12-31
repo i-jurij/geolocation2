@@ -1,0 +1,25 @@
+{
+    "name": "i-jurij/geolocation2",
+    "type": "library",
+    "version": "2.0",
+    "description": "PHP class for geolocation.",
+    "license": "Apache-2.0",
+    "require": {},
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "Geolocation\\Php\\": "src/php/",
+            "Geolocation\\Php\\Lib\\": "src/php/lib/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "Tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
